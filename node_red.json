@@ -1,0 +1,314 @@
+[
+    {
+        "id": "b82156e4dad9b5ec",
+        "type": "tab",
+        "label": "Fluxo 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "563f0ee9f55d95cd",
+        "type": "aedes broker",
+        "z": "b82156e4dad9b5ec",
+        "name": "",
+        "mqtt_port": 1883,
+        "mqtt_ws_bind": "port",
+        "mqtt_ws_port": "",
+        "mqtt_ws_path": "",
+        "cert": "",
+        "key": "",
+        "certname": "",
+        "keyname": "",
+        "persistence_bind": "memory",
+        "dburl": "",
+        "usetls": false,
+        "x": 390,
+        "y": 280,
+        "wires": [
+            [],
+            [
+                "7f98c8162813359c"
+            ]
+        ]
+    },
+    {
+        "id": "7f98c8162813359c",
+        "type": "debug",
+        "z": "b82156e4dad9b5ec",
+        "name": "recebeDistancia",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 660,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "88f1de7648b570eb",
+        "type": "inject",
+        "z": "b82156e4dad9b5ec",
+        "name": "300",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "300",
+        "payloadType": "num",
+        "x": 370,
+        "y": 380,
+        "wires": [
+            [
+                "948ac4ba8f7e6f1f"
+            ]
+        ]
+    },
+    {
+        "id": "948ac4ba8f7e6f1f",
+        "type": "mqtt out",
+        "z": "b82156e4dad9b5ec",
+        "name": "",
+        "topic": "Distancia",
+        "qos": "0",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "9acf74a20511abfc",
+        "x": 640,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "0a8e01b60bcdf5be",
+        "type": "mqtt in",
+        "z": "b82156e4dad9b5ec",
+        "name": "",
+        "topic": "Distancia",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "9acf74a20511abfc",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 380,
+        "y": 480,
+        "wires": [
+            [
+                "1b10c49f17ee5d8c"
+            ]
+        ]
+    },
+    {
+        "id": "1b10c49f17ee5d8c",
+        "type": "debug",
+        "z": "b82156e4dad9b5ec",
+        "name": "Mosca broker",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 640,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "cf390c32f835a603",
+        "type": "function",
+        "z": "b82156e4dad9b5ec",
+        "name": "retornaDistancia",
+        "func": "msg.payload = {\n    'distancia': 300\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 580,
+        "wires": [
+            [
+                "994d638e12532d01"
+            ]
+        ]
+    },
+    {
+        "id": "994d638e12532d01",
+        "type": "http response",
+        "z": "b82156e4dad9b5ec",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 770,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "de9ddc3edad326a6",
+        "type": "http in",
+        "z": "b82156e4dad9b5ec",
+        "name": "",
+        "url": "/distancia",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 310,
+        "y": 580,
+        "wires": [
+            [
+                "cf390c32f835a603"
+            ]
+        ]
+    },
+    {
+        "id": "3c612071245cf97d",
+        "type": "ui_text",
+        "z": "b82156e4dad9b5ec",
+        "group": "5c4cc5e0131c4325",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "",
+        "format": "A distancia é igual a: {{msg.payload}}",
+        "layout": "row-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 590,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "eb57bf91c4774fd8",
+        "type": "ui_gauge",
+        "z": "b82156e4dad9b5ec",
+        "name": "",
+        "group": "5c4cc5e0131c4325",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Distancia",
+        "label": "cm",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "350",
+        "colors": [
+            "#e60505",
+            "#e6e600",
+            "#1cf000"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 600,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "c203f95758e5b8fc",
+        "type": "inject",
+        "z": "b82156e4dad9b5ec",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "300",
+        "payloadType": "num",
+        "x": 410,
+        "y": 680,
+        "wires": [
+            [
+                "eb57bf91c4774fd8",
+                "3c612071245cf97d"
+            ]
+        ]
+    },
+    {
+        "id": "9acf74a20511abfc",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "5c4cc5e0131c4325",
+        "type": "ui_group",
+        "name": "Distancia",
+        "tab": "f93da665969b2417",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "f93da665969b2417",
+        "type": "ui_tab",
+        "name": "Distancia",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
