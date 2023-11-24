@@ -15,4 +15,4 @@ Tendo em vista a segurança do ciclista, desenvolvemos uma solução em IOT que 
 Também decidimos mostrar para ele de 2 formas, com um visor ou com uma luz de led (facilitando ainda mais para o ciclista)
 Desenvolvemos o projeto no TinkerCad, abaixo seguem as imagens do funcionamento do mesmo:
 
-<img align="center" alt="Seguro" src=";seguro.png">
+<img align="center" alt="Seguro" src="seguro.PNG">
