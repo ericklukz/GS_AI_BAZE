@@ -17,11 +17,11 @@ Desenvolvemos o projeto no TinkerCad, abaixo seguem as imagens do funcionamento 
 
 ### Caso não tenha nenhum objeto no raio de 3 metros de distância:
 
-<img align="center" alt="Seguro" src="seguro.PNG">
+<img align="center" alt="Seguro" src="img/seguro.PNG">
 
 ### Caso tenha algum objeto no raio de 3 metros de distância:
 
-<img align="center" alt="Perigo" src="perigo.PNG">
+<img align="center" alt="Perigo" src="img/perigo.PNG">
 
 
 ## Flows
@@ -29,6 +29,6 @@ Também desenvolvemos nosso flow em node-red para integração com o Arduino. A 
 
 Seguem as evidências do mesmo:
 
-<img align="center" alt="Flows" src="flows.PNG">
-<img align="center" alt="Flows" src="dashboard.PNG">
+<img align="center" alt="Flows" src="img/flows.PNG">
+<img align="center" alt="Flows" src="img/dashboard.PNG">
 
