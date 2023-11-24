@@ -29,6 +29,6 @@ Também desenvolvemos nosso flow em node-red para integração com o Arduino. A 
 
 Seguem as evidências do mesmo:
 
-<img align="center" alt="Flows" src="img/flows.PNG">
-<img align="center" alt="Flows" src="img/dashboard.PNG">
+<img align="center" alt="Flows" src="img/flow.PNG">
+<img align="center" alt="Dashboard" src="img/dashboard.PNG">
 
