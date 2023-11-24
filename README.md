@@ -14,3 +14,5 @@ O objetivo principal do Projeto é ajudar no bem-estar das pessoas e ao mesmo te
 Tendo em vista a segurança do ciclista, desenvolvemos uma solução em IOT que visa mostrar objetos que estejam na distancia de 300cm da bike. A ideia é sinalizar para o ciclista que ele está se aproximando de algum objeto ou vice-versa.
 Também decidimos mostrar para ele de 2 formas, com um visor ou com uma luz de led (facilitando ainda mais para o ciclista)
 Desenvolvemos o projeto no TinkerCad, abaixo seguem as imagens do funcionamento do mesmo:
+
+<img align="center" alt="Seguro" src=";seguro.png">
