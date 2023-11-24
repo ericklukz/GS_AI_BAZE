@@ -22,3 +22,12 @@ Desenvolvemos o projeto no TinkerCad, abaixo seguem as imagens do funcionamento 
 ### Caso tenha algum objeto no raio de 3 metros de distância:
 
 <img align="center" alt="Perigo" src="perigo.PNG">
+
+
+## Flows
+Também desenvolvemos nosso flow em node-red para integração com o Arduino. A ideia é receber a distância do arduino e mostrar isso em um dashboard que poderá ser mostrado no celular do ciclista.
+
+Seguem as evidências do mesmo:
+
+<img align="center" alt="Flows" src="flows.PNG">
+
